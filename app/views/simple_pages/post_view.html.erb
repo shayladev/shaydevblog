@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<section class="container">
+
+
+
+<h1 class="post-admin-header">All Posts</h1>
+
+<div class="container-fluid">
+
+  <% @post_admins.each do |post_admin| %>
+    <div class="row post-row">
+      <div class="col-lg-3">
+        <img class="preview-image" src="<%= post_admin.image_url %>" alt="">
+      </div>
+      <div class="col-lg-9">
+        <div class="post-preview">
+          <h3 class="post-title"><%= link_to post_admin.title, action: read %></h3>
+          <p class="post-subtitle"><%= post_admin.subtitle %></p>
+          <p class="post-date"><%= post_admin.updated_at %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

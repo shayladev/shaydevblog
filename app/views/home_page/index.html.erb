@@ -1,0 +1,36 @@
+<!-- <img class="featured-post" src="<#%= @featured_post.image_url %>" alt=""> -->
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="<%= @featured_post.image_url %>" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h5><%= @featured_post.title %></h5>
+        <p><%= @featured_post.subtitle %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="container-fluid">
+    <div class="row latest-row">
+      <% @post_admins.each do |post_admin| %>
+          <div class="col-sm-4">
+            <div class="post-preview">
+              <div class="latest-preview-image">
+                 <img class="latest-image" src="<%= post_admin.image_url %>" alt="">
+              </div>
+              <h3 class="post-title"><%= link_to post_admin.title, simple_pages_post_view_path %></h3>
+              <p class="post-subtitle"><%= post_admin.subtitle %></p>
+              <p class="post-date"><%= post_admin.updated_at %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+  </div>
+
+</div>
+
+<a class="all-posts" href="/simple_pages/post_view"><h6>All Posts</h6></a>
