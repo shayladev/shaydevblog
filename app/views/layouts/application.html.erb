@@ -10,8 +10,6 @@
     <!-- Include bootstrap stylesheet-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 
     <!-- Include jquery-->
@@ -21,37 +19,127 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 
 
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
       <!-- Include bootstrap js-->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+
+    <!-- Include fonts -->
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c|Nanum+Gothic+Coding:700|Roboto+Mono|Space+Mono|Ubuntu+Mono|Vidaloka" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Chonburi|Kumar+One+Outline|Yeseva+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Electrolize|Kanit|Lora|Alegreya+Sans|La+Belle+Aurore|Nothing+You+Could+Do|Rajdhani" rel="stylesheet">
 
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">Journey</a>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-dark navbar-expand-lg navbar-transparent">
+      <a class="navbar-brand navbar-custom-logo" href="/">SHAYLA DEVONISH</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/simple_pages/post_view">Posts <span class="sr-only">(current)</span></a>
+        <ul class="navbar-nav ml-auto navbar-right-menu">
+          <li class="nav-item active "><%= link_to 'my work', simple_pages_work_path %><span class="sr-only">(current)</span>
+          </li>
+        <% if current_user && current_user.admin?  %>
+          <li class="nav-item active"><%= link_to 'posts', post_admins_path %>
+          </li>
+          <li class="nav-item active"><%= link_to 'logout', destroy_user_session_path, method: :delete %>
+          </li>
+        <% end %>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/post_admins">musings</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/simple_pages/about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/post_admins">Admin</a>
-          </li>
+            <a class="nav-link" href="/simple_pages/contact">contact</a>
+          </li> -->
         </ul>
       </div>
     </nav>
 
+    <!-- Page content -->
+    <% if notice %>
+      <p id="notice" class="alert alert-primary"><%= notice %></p>
+    <% end %>
+
+    <% if alert %>
+      <p id="alert" class="alert alert-primary"><%= alert %></p>
+    <% end %>
+
     <%= yield %>
 
 
+    <!-- <%%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "dropdown-item" %> -->
+    <!-- Footer section -->
+    <section class="home-page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 footer-column">
+            <ul>
+              <p class="footer-column header">ABOUT</p>
+              <li><button type="button" class= "btn btn-link modal-button" id="modal-button-footer" data-toggle="modal" data-target=".bd-example-modal-lg">Download Resume</button></li>
+              <li><a href="/posts/11" >About Me</a></li>
+              <li><a href="/simple_pages/work" >My Work</a></li>
+
+            </ul>
+          </div>
+          <div class="col-md-6 col-lg-3 footer-column">
+            <ul>
+              <p class="footer-column header">SOCIAL</p>
+              <li><a href="https://www.linkedin.com/in/shayladevonish/">LinkedIn</a></li>
+              <li><a href="https://www.facebook.com/shayla.devonish">Facebook</a></li>
+              <li><a href="https://www.instagram.com/shaydev/">Instagram</a></li>
+            </ul>
+          </div>
+          <div class="col-md col-lg-5 footer-column footer-column-contact">
+            <ul>
+              <p class="footer-column header">CONTACT</p>
+              <li class="row">
+                <a href="mailto:shaydev@gmail.com?subject=Reaching%Out"><%= image_tag ("001-mail.png"), class: " img-fluid footer-icon"%></a>
+                <a href="mailto:shaydev@gmail.com?subject=Reaching%Out">shaydev@gmail.com</a>
+              </li>
+              <li class="row">
+                <a href="https://goo.gl/maps/hmezqzpewVB2"><%= image_tag ("002-placeholder.png"), class: " img-fluid footer-icon "%></a>
+                <a href="https://goo.gl/maps/hmezqzpewVB2">2727 Grand Vista Circle, Ottawa, ON</a>
+              </li>
+              <li class="row">
+                <a><%= image_tag ("003-phone-call.png"), class: "img-fluid footer-icon "%></a>
+                <a>647-926-5762</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- <br>
+        <br>
+        <br> -->
+        <!-- <p class="footer-column">To Finish: <s>footer icons</s>, <s>write last article</s>, <s>article formatting</s>, <s>resume</s>, article images, <s>security</s>, <s>download button</s>, <s>modal description</s>, <s>url masks</s>, <s>a tags</s>, better mission statement, <s>Edit links on show pages</s>,
+        Eventually: Portfolio, All Posts, Clean code</p> -->
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class"modal-title" id="exampleModalLabel">My Resume</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- <p>Please see below for my most up to date resume. Feel free to reach out to me if you have any further questions. You can find my contact information <a href="/simple_pages/contact" target="_blank">here</a>.</p> -->
+                        <embed id="modal-sdresume" src="<%= asset_path('2019Resume.pdf') %>">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Footer -->
     <footer>
-      &copy; 2019 Shayla Devonish
+      &copy; 2019 Designed and Developed by Shayla Devonish
     </footer>
   </body>
 </html>

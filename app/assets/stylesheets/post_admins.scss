@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.post-area {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .post-row {
   margin-bottom: 20px;
 }
@@ -18,4 +25,64 @@
 .preview-image {
   max-height: 200px;
   max-width: 200px;
+}
+
+
+
+.show-post-image {
+  max-height: 40vh;
+  margin-top: 5vh;
+  margin-bottom: 7vh;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.show-post-title {
+  font-size: 42px;
+  line-height: 1.25;
+  font-family: 'Electrolize', sans-serif;
+}
+
+.show-post-content {
+  font-family: 'Lora', serif;
+  line-height: 1.25;
+  padding-bottom: 20px;
+}
+
+
+
+
+.show-post-content p {
+  font-family: 'Lora', serif;
+  font-size: 1.7em;
+  line-height: 1.25;
+  padding-bottom: 20px;
+}
+
+.show-post-content li {
+  font-family: 'Lora', serif;
+  font-size: 1.7em;
+  line-height: 1.25;
+}
+
+.show-post-content h2 {
+  font-family: 'Lora', serif;
+}
+
+.show-post-content h4 {
+  font-family: 'Electrolize', sans-serif;
+  font-size: 1.8em;
+  font-weight: 800;
+}
+
+.bottom-navigation {
+  margin-bottom: 5vh;
+  font-size: 1.8em;
+}
+
+.index-post-title {
+  font-family: 'Electrolize', sans-serif;
+  font-size: 1.8em;
+  font-weight: 800;
 }

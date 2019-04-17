@@ -2,5 +2,7 @@
 
 <%= render 'form', post_admin: @post_admin %>
 
-<%= link_to 'Show', @post_admin %> |
-<%= link_to 'Back', post_admins_path %>
+<div class="container bottom-navigation">
+  <%= link_to 'Show', @post_admin %> |
+  <%= link_to 'Back', post_admins_path %>
+</div>

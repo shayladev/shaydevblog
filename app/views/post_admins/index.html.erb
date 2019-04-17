@@ -4,7 +4,7 @@
 
 
 
-<h1 class="post-admin-header">Create & Edit Posts</h1>
+<h1 class="post-admin-header">All Posts</h1>
 
 <div class="container-fluid">
 
@@ -15,10 +15,14 @@
       </div>
       <div class="col-lg-9">
         <div class="post-preview">
-          <h3 class="post-title"><%= link_to post_admin.title, post_admin %></h3>
-          <p class="post-date"><%= post_admin.updated_at %></p>
-          <p><%= link_to 'Show', post_admin %> | <span><%= link_to 'Edit', edit_post_admin_path(post_admin) %></span> |
-          <span><%= link_to 'Destroy', post_admin, method: :delete, data: { confirm: 'Are you sure?' } %></span></p>
+          <p class="index-post-title"><%= link_to post_admin.title, post_admin %></p>
+          <p class="index-post-date"><%= post_admin.updated_at %></p>
+          <p><%= link_to 'Show', post_admin %> | <span><%= link_to 'Edit', edit_post_admin_path(post_admin) %></span>
+          <% if can? :update, @post_admins %>
+            <span>| <%= link_to 'Destroy', post_admin, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+          <% end %>
+          </p>
+
         </div>
       </div>
     </div>

@@ -1,5 +1,7 @@
 class PostAdminsController < ApplicationController
-  before_action :set_post_admin, only: [:show, :read, :edit, :update, :destroy]
+  before_action :set_post_admin, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :only => [:new, :edit, :create, :destroy, :update]
+  load_and_authorize_resource :only => [:index, :new, :edit, :create, :destroy, :update]
 
   # GET /post_admins
   # GET /post_admins.json
@@ -14,8 +16,9 @@ class PostAdminsController < ApplicationController
 
   # GET /post_admins/1
   # GET /post_admins/1.json
-  def read
-  end
+  # def read
+  #   @post_admins = PostAdmin.find(params[:id])
+  # end
 
   # GET /post_admins/new
   def new

@@ -1,3 +1,163 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.resume-role {
+  text-align: left;
+  font-size: 1.5em;
+  line-height: 1.25;
+}
+
+
+.resume-location {
+  font-style: italic;
+}
+
+.resume-summary {
+  text-align: left;
+}
+
+.accordian-link {
+  color: #3e1929;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.accordian-link p{
+  font-family: 'Electrolize', sans-serif;
+}
+
+h3 {
+  padding-top: 5vh;
+  padding-bottom: 3vh;
+}
+
+.about-header {
+  margin-top: 25vh;
+  margin-bottom: 15vh;
+}
+
+.about-quote {
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 4em;
+  line-height: 1.25;
+}
+
+.about-quote-link {
+  font-family: 'Electrolize', sans-serif;
+  font-size: 1.3em;
+}
+
+.about-expertise {
+  margin-top: 5vh;
+  margin-bottom: 15vh;
+}
+
+.about-expertise h3 {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 3em;
+  padding-bottom: 0;
+}
+
+.about-expertise li {
+  font-family: 'Electrolize', sans-serif;
+  font-size: 1.3em;
+  line-height: 30px;
+}
+
+.expertise-section {
+  padding-left: 0;
+}
+
+
+
+.resume-header h3 {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 3em;
+}
+
+.resume-row {
+  margin-bottom: 10vh;
+}
+
+.card-header {
+  border-bottom: 40px solid white;
+}
+
+.card-header-1 {
+  background-color: #8ae8f7;
+  // background-color: #b7f5ff;
+}
+
+.card-header-2 {
+  background-color: #e5e0e0;
+}
+
+.card-header-3 {
+  background-color: #4a559b;
+}
+
+.card-header-3 .resume-role {
+  color: white;
+}
+
+.card-body p {
+  font-size: 1.5em;
+  font-family: 'Alegreya Sans', sans-serif;
+  padding-bottom: 15px;
+}
+
+.card-body li {
+  font-size: 1.5em;
+  font-family: 'Alegreya Sans', sans-serif;
+  padding-bottom: 15px;
+}
+
+#modal-sdresume {
+  height: 500px;
+  width: 100%;
+}
+
+#modal-button-link {
+  border:0;
+}
+
+#modal-button-link:hover {
+  background-color: transparent;
+}
+
+.modal {
+    top: 50px;
+    margin: auto;
+}
+
+.modal-button {
+  border-color: #03ceef;
+  color: black;
+}
+
+.modal-button:hover {
+  background-color: #3e1929;
+}
+
+#resume-button {
+  align-items: center;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+
+}
+
+#resume-button .btn {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 3em;
+}
+
+#resume-link button {
+  padding-left: 0;
+  color: #03ceef;
+  font-family: 'Electrolize', sans-serif;
+  font-size: 1.3em;
+}

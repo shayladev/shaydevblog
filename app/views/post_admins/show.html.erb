@@ -1,29 +1,49 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <section class="post-area">
+    <div class="show-image">
+      <img src="<%= @post_admin.image_url %>" class="img-fluid show-post-image">
+    </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post_admin.title %>
-</p>
 
-<p>
-  <strong>Subtitle:</strong>
-  <%= @post_admin.subtitle %>
-</p>
+    <div class="show-title">
+      <p class="show-post-title"><%= @post_admin.title %></p>
+      <p class="show-post-subtitle"><%= @post_admin.subtitle %></p>
+    </div>
+    <!-- <p class="post-date"><#%= @post_admin.created_at %></p> -->
 
-<p>
-  <strong>Topic:</strong>
-  <%= @post_admin.topic %>
-</p>
 
-<p>
-  <strong>Content:</strong>
-  <%= simple_format(@post_admin.content) %>
-</p>
+    <div class="show-post-content">
+      <p>
+        <%= simple_format(@post_admin.content) %>
+      </p>
+    </div>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @post_admin.image_url %>
-</p>
 
-<%= link_to 'Edit', edit_post_admin_path(@post_admin) %> |
-<%= link_to 'Back', post_admins_path %>
+
+    <div class="tags">
+      <p>
+        <strong>tags:</strong>
+        <%= @post_admin.topic %>
+      </p>
+    </div>
+
+    <div class="bottom-navigation">
+      <% if can? :update, @post_admins %>
+        <span> <%= link_to 'Edit', edit_post_admin_path(@post_admin) %> |</span>
+      <% end %>
+
+      <%= link_to 'Back', root_path %>
+    </div>
+
+
+  </section>
+
+<!-- <script type="text/javascript">
+    var imgsource = $("img").attr("src")
+    $("img").addClass("img-zoom");
+    $("img", this).attr("data-zoom-image", imgsource);
+</script> -->
+
+
+
+</div>

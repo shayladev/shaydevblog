@@ -16,7 +16,99 @@
 
 .body {
   margin:0px;
+  background-color: #8efcdf;
 }
+
+
+.navbar-transparent {
+  background-color: #212a62;
+}
+
+.navbar-transparent a {
+  font-family: 'Electrolize', sans-serif;
+  color: white;
+  font-size: 1.5em;
+}
+
+.navbar-custom-logo:visited {
+  color: #03ceef;
+
+}
+
+.navbar-right-menu li {
+  padding-bottom: 20px;
+}
+
+
+.alert-primary {
+  margin-bottom: 0;
+  opacity: 0.75;
+  background-color: #8effef;
+}
+
+#notice {
+  color: #212a62;
+  text-align: center;
+  font-family: 'Electrolize', sans-serif;
+  letter-spacing: 1px;
+  font-size: 1.5em;
+}
+
+#alert {
+  color: #212a62;
+  text-align: center;
+  font-family: 'Electrolize', sans-serif;
+  letter-spacing: 1px;
+  font-size: 1.5em;
+}
+
+.home-page-footer {
+  background-color: #3e1929;
+  padding-top: 15vh;
+  padding-bottom: 10vh;
+
+}
+
+.home-page-footer ul {
+  list-style: none;
+}
+
+.home-page-footer li {
+  padding-bottom: 18px;
+  color: #03ceef;
+  font-family: 'Electrolize', sans-serif;
+  font-size: 15px;
+}
+
+.home-page-footer a:hover {
+  background-color: transparent;
+}
+
+.footer-column {
+  color: white;
+}
+
+.footer-column-contact a {
+  padding-left: 15px;
+}
+
+#modal-button-footer {
+  padding: 0;
+  border: 0;
+  color: #03ceef;
+  font-family: 'Electrolize', sans-serif;
+  font-size: 15px;
+}
+
+#modal-button-footer:hover {
+  color: white;
+}
+
+.footer-icon {
+  max-width: 32px;
+}
+
+
 
 footer {
   position: fixed;
@@ -25,4 +117,11 @@ footer {
   width:100%;
   background: black;
   color: white;
+  text-align: right;
+}
+
+@media (min-width: 992px) {
+  .navbar-right-menu li {
+    padding-bottom: 0;
+    padding-left: 25px;
 }

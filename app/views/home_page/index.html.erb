@@ -1,36 +1,53 @@
-<!-- <img class="featured-post" src="<#%= @featured_post.image_url %>" alt=""> -->
 
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="<%= @featured_post.image_url %>" alt="First slide">
-      <div class="carousel-caption d-none d-md-block">
-        <h5><%= @featured_post.title %></h5>
-        <p><%= @featured_post.subtitle %></p>
+<section class="homepage">
+  <div class="splash">
+    <div class="splash-text">
+      <h1>Lead with Love.</h1>
+    </div>
+  </section>
+
+  <section class="about-me-blurb">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <%= image_tag ("headshot.png"), class: "img-fluid headshot"%>
+        </div>
+        <div class="col-sm-9">
+          <p>Hey there!</p>
+          <!-- <p>I believe that one way to love is to work. Work is the outpouring of what we have, our skills, talents and time, for the benefit of others.</p> -->
+          <p>Lead with Love means starting the day with the intention of using the skills, talents and time that I've been given to meet the needs of others. It's  about leading others the way I'd like to be led and it's about always seeing each person I work with like the valuable, insightful and unique individuals that they are, and treating them as such.</p>
+          <p>Right now I'm doing this as a Business Systems Analyst at <a href="https://www.cheo.on.ca" target="_blank">CHEO</a> where I translate the needs of hospital staff into  functional requirements, brainstorm ways of meeting those requirements, and configure clinical systems to satisfy the original need.</p>
+          <p>I aim to find more opportunities to work as part of a team of like-minded, collaborative and supportive individuals; a team that uses data, strategy and hard-earned wisdom to support its decision-making and direction setting.</p>
+          <p id="signature">Shayla Devonish</p>
+          <a href="/simple_pages/work" class="btn btn-secondary" id="my-work">My Work</a>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<div class="container">
-
-  <div class="container-fluid">
-    <div class="row latest-row">
-      <% @post_admins.each do |post_admin| %>
-          <div class="col-sm-4">
-            <div class="post-preview">
-              <div class="latest-preview-image">
-                 <img class="latest-image" src="<%= post_admin.image_url %>" alt="">
+  <section class=" latest-row-section" id="latest-posts">
+    <div class="container-fluid">
+      <h2 class="latest-row-header">My Latest Musings</h2>
+      <div class="row latest-row">
+        <% @post_admins.each do |post_admin| %>
+            <div class="col-sm-4 col-md-12 col-lg-4 latest-post-square">
+              <div class="post-preview">
+                <div class="latest-preview-image">
+                   <%= link_to "#{image_tag(post_admin.image_url, class: "latest-image")}".html_safe, post_admin %>
+                </div>
+                <h3 class="post-title"><%= link_to post_admin.title, post_admin %></h3>
+                <p class="post-subtitle"><%= post_admin.subtitle %></p>
+                <!-- <p class="post-date"><#%= post_admin.updated_at %></p> -->
               </div>
-              <h3 class="post-title"><%= link_to post_admin.title, simple_pages_post_view_path %></h3>
-              <p class="post-subtitle"><%= post_admin.subtitle %></p>
-              <p class="post-date"><%= post_admin.updated_at %></p>
             </div>
-          </div>
-        <% end %>
-      </div>
-  </div>
+          <% end %>
+        </div>
+    </div>
+  </section>
+
+
+
+
+
 
 </div>
-
-<a class="all-posts" href="/simple_pages/post_view"><h6>All Posts</h6></a>

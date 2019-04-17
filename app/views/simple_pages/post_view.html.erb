@@ -15,7 +15,8 @@
       </div>
       <div class="col-lg-9">
         <div class="post-preview">
-          <h3 class="post-title"><%= link_to post_admin.title, action: read %></h3>
+          <p class="post-title"><%= post_admin.title %></p>
+          <!-- <h3 class="post-title# link_to post_admin.title, action: read %></h3> -->
           <p class="post-subtitle"><%= post_admin.subtitle %></p>
           <p class="post-date"><%= post_admin.updated_at %></p>
         </div>
@@ -23,3 +24,5 @@
     </div>
   <% end %>
 </div>
+
+</section>

@@ -2,24 +2,111 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+// Home page
+
+.homepage {
+  background: image-url('painting.jpg') no-repeat fixed center;
+  background-size: cover;
+}
+
+.splash {
+  padding-bottom: 60vh;
+}
+
+.splash-text h1 {
+  text-align: center;
+  padding-top: 35vh;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 6rem;
+  color: white;
+}
+
+.about-me-blurb {
+  background-color: #fafafa;
+  padding-top:15vh;
+  padding-bottom: 15vh;
+}
+
+.about-me-blurb p {
+  font-family: 'Electrolize', sans-serif;
+  font-size: 1.7em;
+  line-height: 25px;
+  padding-bottom: 10px;
+}
+
+#signature  {
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 3em;
+  padding-top: 10px;
+  padding-bottom: 25px;
+}
+
+#my-work {
+  background-color: white;
+  color: #3e1929;
+  border: 2px solid #03ceef ;
+  font-family: 'Electrolize', sans-serif;
+  font-size: 1.7em;
+}
+
+.headshot {
+  width: 250px;
+  margin-bottom: 30px;
+}
+
 .featured-post {
   width: 100%;
 }
 
-.latest-row {
-  margin-bottom: 25px;
+.latest-row-section {
+  background-color: #e5e0e0;
+  text-align: center;
+  padding-bottom: 5vh;
 }
+
+.latest-row-header {
+  text-align: center;
+  padding-top: 7vh;
+  padding-bottom: 2vh;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 2.5rem;
+}
+
+.post-title {
+  margin-top: 15px;
+}
+
+.post-title a {
+  color: #3e1929;
+  font-family: 'Electrolize', sans-serif;
+}
+
+.post-title :visited {
+  color: black;
+  background-color: #03ceef;
+}
+
+.latest-post-square {
+  width: 500px;
+}
+
 
 .latest-preview-image {
   background-color: black;
+  width: 150%;
   height: 250px;
+  overflow: hidden;
   margin-top: 25px;
 }
 
+
+
 .latest-image {
   width: 100%;
-  max-height: 250px;
-  margin: auto;
+  min-height: 250px;
+  margin: -15% 0 0 0px;
+  overflow: hidden;
 }
 
 .all-posts   {
