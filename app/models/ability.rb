@@ -39,6 +39,9 @@ class Ability
         # can :read, :post_admin
         cannot :update, :post_admins
         cannot :manage, :user
+        can :read, :home_page
+        can :read, :post_admins
+        can :read, :simple_pages
       end
   end
 end
