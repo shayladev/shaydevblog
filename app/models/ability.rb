@@ -30,18 +30,18 @@ class Ability
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
 
 
-      user ||= User.new # guest user (not logged in)
-      if user.admin?
-        can :manage, :all
-      else
-        # can :manage, :all
-        # can :read, :post_admins
-        # can :read, :post_admin
-        cannot :update, :post_admins
-        cannot :manage, :user
-        can :read, :home_page
-        can :read, :post_admins
-        can :read, :simple_pages
-      end
+      # user ||= User.new # guest user (not logged in)
+      # if user.admin?
+      #   can :manage, :all
+      # else
+      #   # can :manage, :all
+      #   # can :read, :post_admins
+      #   # can :read, :post_admin
+      #   cannot :update, :post_admins
+      #   cannot :manage, :user
+      #   can :read, :home_page
+      #   can :read, :post_admins
+      #   can :read, :simple_pages
+      # end
   end
 end
